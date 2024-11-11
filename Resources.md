@@ -33,9 +33,14 @@
 
 ### Tutorials
 
-- [Introduction to Web Scraping with Python](https://datawhatnow.com/introduction-web-scraping-python/)
-- [History of APIS](https://github.com/lmccart/itp-critical-apis/wiki/Survey)
-- [The Intimacy of the Command-Line](http://scan.net.au/scn/journal/vol10number2/Nancy-Mauro-Flude.html)
+### First steps
+
 - Javascript: [first steps](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps), [online interactive](https://learnjavascript.online), [in 100 seconds](https://www.youtube.com/watch?v=DHjqpvDnNGE).
 - [Installing Python](https://realpython.com/installing-python/#windows-how-to-check-or-get-python)
 - Python: Automate the Boring Stuff ([text](https://automatetheboringstuff.com), [video](https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW)), [in 100 seconds](https://www.youtube.com/watch?v=x7X9w_GIm1s)
+
+### Additional tools
+
+- [Introduction to Web Scraping with Python](https://datawhatnow.com/introduction-web-scraping-python/)
+- [History of APIS](https://github.com/lmccart/itp-critical-apis/wiki/Survey)
+- [The Intimacy of the Command-Line](http://scan.net.au/scn/journal/vol10number2/Nancy-Mauro-Flude.html)
