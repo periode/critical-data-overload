@@ -35,8 +35,9 @@
 
 #### First steps
 
+- Javascript: [Installing Node](https://nodejs.org/en/download/prebuilt-installer/current)
 - Javascript: [first steps](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps), [online interactive](https://learnjavascript.online), [in 100 seconds](https://www.youtube.com/watch?v=DHjqpvDnNGE).
-- [Installing Python](https://realpython.com/installing-python/#windows-how-to-check-or-get-python)
+- Python: [Installing Python](https://realpython.com/installing-python/#windows-how-to-check-or-get-python)
 - Python: Automate the Boring Stuff ([text](https://automatetheboringstuff.com), [video](https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW)), [in 100 seconds](https://www.youtube.com/watch?v=x7X9w_GIm1s)
 
 #### Additional tools
