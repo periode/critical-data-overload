@@ -38,13 +38,13 @@ You ? Name, experience with programming, why did you come to this class?
 
 ---
 
-__WHAT__
+### WHAT
 
 This class is about critically thinking about data through direct engagement.
 
 ---
 
-__WHY__
+### WHY
 
 - what is data? when does it become information? what is this information about?
 - how is data distributed? how is it taken apart and recombined? what do technical systems reveal about data providers?
@@ -52,7 +52,7 @@ __WHY__
 
 ---
 
-__HOW__
+### HOW
 
 Over the next 5 days, we will collaboratively build new corpora of online data.
 
@@ -120,7 +120,19 @@ What agency do we have when faced with a deluge of data?
 
 ---
 
+MAHLZEIT
+
+---
+
 ## Working with data
+
+---
+
+Installing our tools
+
+- Web Browser (please no Safari)
+- NodeJS
+- Python
 
 ---
 
@@ -201,6 +213,7 @@ Navigating
 
 ---
 
-## Tomorrow
+## Homework
 
 - __read__: [_Scrapism, A Manifesto_](https://read.dukeupress.edu/critical-ai/article-abstract/doi/10.1215/2834703X-10734046/382464/Scrapism-A-Manifesto) by Sam Lavigne
+- __think__: what kinds of data would you like to collect? which system are you interested in?

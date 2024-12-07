@@ -4,7 +4,7 @@
 
 ### Required
 
-- [Scrapism: A Manifesto](https://read.dukeupress.edu/critical-ai/article-abstract/doi/10.1215/2834703X-10734046/382464/Scrapism-A-Manifesto), Sam Lavigne, 2023.
+- [Scrapism: A Manifesto](https://lav.io/media/scrapism.pdf), Sam Lavigne, 2023, Critical AI vol. 1 (1-2), Duke University Press.
 
 ### Optional
 
