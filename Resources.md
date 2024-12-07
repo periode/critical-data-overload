@@ -16,12 +16,19 @@
 
 - Sam Lavigne's [Baabaa](https://lav.io/projects/baabaa/), [C-Span 5](https://lav.io/projects/cspan-5/), [Occupied B&B](https://lav.io/projects/occupied-bnb/) (and the [accompanying piece](https://www.thenation.com/article/archive/airbnb-settlement-lawsuit-palestinian-challenge/))
 - Winnie Soon's [Unerasable Characters](https://siusoon.net/projects/unerasablecharacters-i)
+- Miao Ying's [Blind Spot](https://anthology.rhizome.org/blind-spot)
 - Pierre Depaz's [Real Time Sound Cloud](https://realtime.enframed.net)
 - Anonymous' [F*ck everyword](https://x.com/fuckeveryword)
 - Jason Salavon's [100 Special Moments](http://salavon.com/work/SpecialMoments/)
 - Lev Manovich and his team's [Selfie City](https://selfiecity.net)
 - Mimi Onuha's [Missing Datasets](https://github.com/MimiOnuoha/missing-datasets)
 - Disnovation.org's [Pirate Cinema](https://disnovation.org/piratecinema.php)
+- Kyle McDonald's [Spotify Serendipity](https://youtu.be/mD7vs_Vw_P0?si=HmtWzD_R_zEqV_x6)
+- Luke DuBois's [A More Perfect Union](https://www.lukedubois.com/projects-2/perfect) and [Billboard](https://www.lukedubois.com/projects-2/billboard)
+- Mark Hansen and Ben Rubin's [Moveable Type](https://vimeo.com/113240712)
+- Aaron Swartz and Taryn Simon's [Image Atlas](https://anthology.rhizome.org/image-atlas)
+- Nicolas Malevé's [12 Hours of ImageNet](https://www.youtube.com/watch?v=PC60JL-lMzA)
+- Josh Begley's [Prison Map](http://prisonmap.com/about) and [Drone Stream](https://x.com/dronestream) and [Condolences](https://theintercept.co/condolences/)
 
 ## Technical
 
