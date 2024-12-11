@@ -128,34 +128,6 @@ MAHLZEIT
 
 ---
 
-## Working with data
-
----
-
-Installing our tools
-
-- Web Browser (please no Safari)
-- NodeJS
-- Python
-
----
-
-Data __types__
-
----
-
-Data __structures__
-
----
-
-Data __markups__
-
----
-
-Manipiulating in a __programming language__
-
----
-
 ## Gathering data
 
 ---
@@ -166,19 +138,31 @@ If you see it on your browser, it's already in your computer.
 
 ---
 
-Practical example in the browser
+__Interfacing__ is the process of asking for data from a specialized service (an _Application Programming Interface_)
 
 ---
 
-Developer tools are your best friends!
+Both can be automated!
 
 ---
 
-Automating it!
+## Working with web data
 
 ---
 
-APIs
+Data __markups__
+
+```html
+<element attribute="value">some text</element>
+```
+
+---
+
+Anatomy of a webpage a.k.a Developer Tools are your best friends!
+
+(please don't use safari)
+
+- menu > more tools > developer tools > elements
 
 ---
 

@@ -202,9 +202,32 @@ Moving parts:
 
 ---
 
+Data __structures__
+
+`JSON` is the default way of exchanging information on the web.
+
+```js
+{
+    "key": "value",
+    "key2": [
+        "value1",
+        "value2"
+    ],
+    "key3": {
+        "key4": "value3",
+        "key5": [
+            "value4",
+            "value5"
+        ]
+    }
+}
+```
+
+---
+
 The data model is how the data is represented by a specific organization.
 
-For instance, YouTube, SoundCloud and Spotify do not represent a song the same way.
+For instance, [YouTube](https://developers.google.com/youtube/v3/docs/videos), [SoundCloud](https://developers.soundcloud.com/docs/api/explorer/open-api#/tracks/get_tracks__track_id_) and [Spotify](https://developer.spotify.com/documentation/web-api/reference/get-track) represent a song in different ways.
 
 ---
 
