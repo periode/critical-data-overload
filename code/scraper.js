@@ -46,7 +46,7 @@ const parseBody = (body) => {
     })
 
     // now, we save our results to a file
-    const TARGET_FILE = "./results.txt"
+    const TARGET_FILE = "./results_js.txt"
     fs.writeFileSync(TARGET_FILE, results.join("\n"))
     console.log("wrote to",TARGET_FILE)
 }
