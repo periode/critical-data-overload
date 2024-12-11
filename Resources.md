@@ -14,12 +14,14 @@
 
 ## Artistic
 
-- Sam Lavigne's [Baabaa](https://lav.io/projects/baabaa/), [C-Span 5](https://lav.io/projects/cspan-5/), [Occupied B&B](https://lav.io/projects/occupied-bnb/) (and the [accompanying piece](https://www.thenation.com/article/archive/airbnb-settlement-lawsuit-palestinian-challenge/))
+- Sam Lavigne's [Get Well Soon](https://lav.io/projects/get-well-soon/), [C-Span 5](https://lav.io/projects/cspan-5/), [Occupied B&B](https://lav.io/projects/occupied-bnb/) (and the [accompanying piece](https://www.thenation.com/article/archive/airbnb-settlement-lawsuit-palestinian-challenge/))
 - Winnie Soon's [Unerasable Characters](https://siusoon.net/projects/unerasablecharacters-i)
 - Miao Ying's [Blind Spot](https://anthology.rhizome.org/blind-spot)
 - Pierre Depaz's [Real Time Sound Cloud](https://realtime.enframed.net)
 - Anonymous' [F*ck everyword](https://x.com/fuckeveryword)
 - Jason Salavon's [100 Special Moments](http://salavon.com/work/SpecialMoments/)
+- Lawrence Abu Hamdan's [Air Pressure](https://airpressure.info)
+- Hatnote's [Listen to Wikipedia](http://listen.hatnote.com)
 - Lev Manovich and his team's [Selfie City](https://selfiecity.net)
 - Mimi Onuha's [Missing Datasets](https://github.com/MimiOnuoha/missing-datasets)
 - Disnovation.org's [Pirate Cinema](https://disnovation.org/piratecinema.php)
@@ -29,6 +31,8 @@
 - Aaron Swartz and Taryn Simon's [Image Atlas](https://anthology.rhizome.org/image-atlas)
 - Nicolas Malevé's [12 Hours of ImageNet](https://www.youtube.com/watch?v=PC60JL-lMzA)
 - Josh Begley's [Prison Map](http://prisonmap.com/about) and [Drone Stream](https://x.com/dronestream) and [Condolences](https://theintercept.co/condolences/)
+- [Truth and Quantity](https://truth-and-quantity.com)
+- [Flickr's Data Lifeboat](https://www.flickr.org/programs/content-mobility/data-lifeboat/)
 
 ## Technical
 
@@ -37,6 +41,8 @@
 - [artoo.js](https://medialab.github.io/artoo/), scraping in JavaScript.
 - [minet](https://github.com/medialab/minet), scraping in Python.
 - [BeautifulSoup](https://beautiful-soup-4.readthedocs.io/en/latest/), advanced scraping in Python.
+- [requests](https://docs.python-requests.org/en/latest/index.html), making simple HTTP requests in Python.
+- [cheerio](https://cheerio.js.org), advanced scraping in JavaScript.
 
 ### Tutorials
 
@@ -46,8 +52,9 @@
 - [Installing Python](https://realpython.com/installing-python/#windows-how-to-check-or-get-python)
 - Python: Automate the Boring Stuff ([text](https://automatetheboringstuff.com), [video](https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW)), [in 100 seconds](https://www.youtube.com/watch?v=x7X9w_GIm1s)
 
-#### Additional tools
+#### Additional links
 
 - [Introduction to Web Scraping with Python](https://datawhatnow.com/introduction-web-scraping-python/)
 - [History of APIS](https://github.com/lmccart/itp-critical-apis/wiki/Survey)
 - [The Intimacy of the Command-Line](http://scan.net.au/scn/journal/vol10number2/Nancy-Mauro-Flude.html)
+- [View Source](https://viewsource.info)
