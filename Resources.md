@@ -13,6 +13,7 @@
 - [(De)constructing machines as critical technical practice](https://journals.sagepub.com/doi/10.1177/13548565221148098), Winnie Soon & Pablo Velasco, 2023.
 
 ## Artistic
+
 Politics:
 
 - Sam Lavigne's [Get Well Soon](https://lav.io/projects/get-well-soon/), [C-Span 5](https://lav.io/projects/cspan-5/), [Occupied B&B](https://lav.io/projects/occupied-bnb/) (and the [accompanying piece](https://www.thenation.com/article/archive/airbnb-settlement-lawsuit-palestinian-challenge/))
