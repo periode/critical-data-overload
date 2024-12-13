@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>publi | day_1.md</title>
+    <style>
+      :root {
+      --fg-color: rgb(51, 51, 51);
+      --bg-color: rgb(250, 250, 247);
+
+      --sans-serif: "Open Sans";
+      --serif: "Crimson Pro";
+
+      --margin: 5px;
+      }
+
+      /* SANS-SERIF FONT */
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-VariableFont_wdthwght.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic-VariableFont_wdthwght.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 300;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light.woff") format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 300;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-LightItalic.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBold.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 600;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBoldItalic.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Bold.woff") format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 700;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-BoldItalic.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 800;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBold.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 800;
+      src: local("Open Sans"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBoldItalic.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans Light";
+      font-style: normal;
+      font-weight: 300;
+      src: local("Open Sans Light"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light-webfont.woff")
+      format("woff");
+      }
+      @font-face {
+      font-family: "Open Sans Condensed";
+      font-style: normal;
+      font-weight: 700;
+      src: local("Open Sans Condensed"),
+      url("https://fonts.cdnfonts.com/s/14884/OpenSans-CondBold.woff")
+      format("woff");
+      }
+
+      /* SERIF FONT */
+      @font-face {
+      font-family: 'Crimson Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro[wght].woff') format('woff');
+      }
+      @font-face {
+      font-family: 'Crimson Pro';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-Italic[wght].woff') format('woff');
+      }
+      @font-face {
+      font-family: 'Crimson Pro';
+      font-style: normal;
+      font-weight: 200;
+      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLight.woff') format('woff');
+      }
+      @font-face {
+      font-family: 'Crimson Pro';
+      font-style: italic;
+      font-weight: 200;
+      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLightItalic.woff') format('woff');
+      }
+
+
+
+      /* GENERAL ELEMENTS */
+
+      html {
+      font-size: 18pt;
+      }
+
+      @media screen and (max-width: 1000px) {
+      main {
+      font-size: 24pt;
+      }
+      }
+
+      body {
+      margin: 0;
+      color: var(--fg-color);
+      background-color: var(--bg-color);
+      }
+
+      main {
+      width: 60vw;
+      margin: auto;
+      padding-bottom: 30vh;
+      }
+
+      @media screen and (max-width: 1000px) {
+      main {
+      width: 75vw;
+      font-size: 24pt;
+      margin-left: 5vw;
+      margin-right: 0;
+      }
+      }
+
+      img {
+      max-height: 60vh;
+      max-width: 100%;
+      }
+
+      hr {
+      border: none;
+      }
+
+      a {
+      color: var(--fg-color);
+      }
+
+      pre {
+      white-space: break-spaces;
+      overflow-x: hidden;
+      }
+
+      footer {
+      position: fixed;
+      bottom: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+      font-family: var(--serif), serif;
+      font-style: normal;
+      font-weight: normal;
+      }
+
+      .footnote-link {
+      vertical-align: super;
+      font-size: 0.8em;
+      cursor: pointer;
+      }
+
+      emph {
+      font-style: italic;
+      }
+
+      /* CONTENT */
+
+      p,
+      figcaption,
+      div.notes,
+      ol,
+      ul {
+      font-family: var(--sans-serif), serif;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      }
+
+      div.notes p {
+      font-style: italic;
+      font-size: 0.9em;
+      }
+
+      figure{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
+      figcaption {
+      font-size: 0.8em;
+      }
+
+      pre {
+      background-color: #eee;
+      padding: 5px;
+      border: 1px solid #aaa;
+      }
+
+      quote p {
+      font-family: var(--sans-serif), serif;
+      display: block;
+      font-style: italic;
+      border-left: 2px solid black;
+      padding: 1em;
+      margin-left: 1em;
+      background-color: rgb(255, 250, 200);
+      }
+
+      li {
+      font-family: var(--sans-serif), serif;
+      margin-bottom: 5px;
+      }
+    </style>
+    <style>
+      /* SNAP SCROLL */
+
+      /* main {
+      scroll-snap-type: y mandatory;
+      height:100vh;
+      overflow-y: scroll;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      }
+
+      main::-webkit-scrollbar {
+      display: none;
+      }
+
+      main h1, main h2, main h3 {
+      scroll-snap-align: start;
+      } */
+
+      main {
+      display: flex;
+      gap: 20px;
+      }
+
+      hr {
+      height: 90vh;
+      }
+
+      h1,
+      h2,
+      h3 {
+      margin-top: 30vh;
+      padding-top: 10vh;
+      }
+
+      main h1,
+      main h2,
+      main h3 {
+      border-bottom: 2px solid var(--fg-color);
+      padding-bottom: 10px;
+      }
+
+      h1 {
+      font-size: 4em;
+      }
+
+      h2 {
+      font-size: 3em;
+      }
+
+      h3 {
+      font-size: 2em;
+      }
+
+      p {
+      font-size: 1.1em;
+      }
+
+      pre {
+      overflow-x: auto;
+      }
+
+      figure {
+      margin: 0;
+      align-items: start;
+      }
+
+      /* CONTENT */
+
+      .content {
+      width: 100%;
+      }
+
+      .notes {
+      font-size: 0.9em;
+      }
+
+      .invisible {
+      display: none;
+      }
+
+      /* TABLE OF CONTENTS */
+
+      .toc {
+      position: fixed;
+      top: 0;
+      bottom: var(--margin);
+      right: var(--margin);
+      max-width: 15vw;
+      margin: 5px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      place-content: end;
+
+      font-size: 20pt;
+      }
+
+      @media screen and (max-width: 1000px) {
+      .toc {
+      max-width: 20vw;
+      font-size: 28pt;
+      }
+      }
+
+      .toc h1,
+      .toc h2,
+      .toc h3 {
+      font-family: var(--sans-serif), sans-serif;
+      margin: 0;
+      padding: 0;
+      }
+
+      .toc h1 {
+      font-family: var(--serif);
+      position: fixed;
+      top: var(--margin);
+      right: var(--margin);
+      max-width: 15vw;
+      margin: 5px;
+      padding: 0;
+      }
+
+      @media screen and (max-width: 1000px) {
+      .toc h1 {
+      max-width: 20vw;
+      }
+      }
+
+      .toc h2,
+      .toc h3 {
+      cursor: pointer;
+      }
+
+      .toc h2:hover,
+      .toc h3:hover {
+      text-decoration: underline;
+      }
+
+      .toc h1 {
+      font-size: 1em;
+      }
+
+      .toc h2 {
+      font-size: 0.8em;
+      margin-top: 3px;
+      margin-bottom: 0px;
+      }
+
+      .toc h3 {
+      font-size: 0.6em;
+      }
+
+      .current-heading {
+      font-weight: bold;
+      }
+
+      /* FOOTNOTES */
+
+      .footnotes {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-bottom: var(--margin);
+      }
+
+      .footnotes ol {
+      width: 60vw;
+      margin: auto;
+      padding-left: 0;
+
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      list-style: none;
+
+      font-size: 0.8em;
+      }
+
+      @media screen and (max-width: 1000px) {
+      .footnotes ol {
+      width: 70vw;
+      font-size: 0.9em;
+      text-align: center;
+      }
+      }
+
+      .footnotes li::before {
+      content: attr(data-footnote-id);
+      margin-right: 2px;
+      vertical-align: super;
+      font-size: 0.7em;
+      }
+
+      /* INTERFACE */
+
+      button {
+      background-color: var(--bg-color);
+      cursor: pointer;
+      }
+
+      .button-holder {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 5px;
+      }
+
+      .button-holder button {
+      font-size: 0.6em;
+      }
+
+      @media screen and (max-width: 1000px) {
+      .button-holder button {
+      font-size: 1.2em;
+      }
+      }
+
+      /* COMPLETION ANIMATION */
+
+      @keyframes scaleProgress {
+      0% {
+      transform: scaleY(0);
+      }
+      100% {
+      transform: scaleY(1);
+      }
+      }
+
+      .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform-origin: top;
+      animation: scaleProgress auto linear;
+      animation-timeline: scroll(root);
+      background-color: black;
+      width: 3px;
+      height: 100vh;
+      }
+    </style>
+    <script></script>
+    <script>
+      'use strict';
+
+      const init = () => {
+      initHeadingsObserver()
+      initFootnotesObserver();
+      }
+
+      const initFootnotesObserver = () => {
+      const options = {
+      root: null,
+      rootMargin: "-10%",
+      threshold: 1.0,
+      };
+
+      const refs = document.querySelectorAll(".footnote-link")
+      const toggleFootnoteVisibility = (entries) => {
+      entries.forEach((entry) => {
+      const id = entry.target.dataset.id
+      const fn = document.getElementById(`footnote-${id}`)
+      if (!fn) {
+      console.warn(`could not find footnote #${id}`)
+      return
+      }
+      if (entry.intersectionRatio === 1) {
+      fn.classList.remove("invisible")
+      } else {
+      fn.classList.add("invisible")
+      }
+      })
+      }
+
+      const observer = new IntersectionObserver(toggleFootnoteVisibility, options);
+      refs.forEach(r => observer.observe(r))
+      }
+
+      const initHeadingsObserver = () => {
+      document.querySelectorAll(".toc h3").forEach(e => e.classList.add("invisible"))
+
+      const options = {
+      root: null,
+      rootMargin: "-10%",
+      threshold: 1.0,
+      };
+
+      const h2 = document.querySelectorAll("main h2")
+      const h3 = document.querySelectorAll("main h3")
+      const headings = [...h2, ...h3]
+
+      let current;
+      const toggleToCHighlight = (entries) => {
+      entries.forEach((entry) => {
+      var el = document.querySelector(`.toc #toc-${entry.target.id}`)
+      if (entry.intersectionRatio > 0.9) {
+      if (current === el) return
+
+      // set current style
+      if (current) current.classList.remove("current-heading")
+      el.classList.add("current-heading")
+      current = el
+
+      // toggle sub-heading visibility
+      if (el.tagName == "H2") {
+      document.querySelectorAll(".toc h3").forEach(e => e.classList.add("invisible"))
+      let sibling = el.nextElementSibling
+
+      while (sibling != null && sibling.tagName == "H3") {
+      sibling.classList.remove("invisible")
+      sibling = sibling.nextElementSibling
+      }
+      }
+      }
+      });
+      };
+
+      const observer = new IntersectionObserver(toggleToCHighlight, options);
+      headings.forEach(h => observer.observe(h))
+      }
+
+      const setFullscreen = () => {
+      document.documentElement.requestFullscreen()
+      }
+
+      const toggleNotes = () => {
+      let els = document.querySelectorAll(".notes")
+      if (els) els.forEach(e => e.classList.toggle("invisible"))
+      else console.warn("could not find notes")
+      }
+
+      const goToHeading = (anchor) => {
+      const el = document.getElementById(anchor)
+      if (el) el.scrollIntoView({ behavior: "smooth" })
+      else console.warn("could not find heading with anchor", anchor)
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <div class="progress"></div>
+    <header></header>
+    <div class="toc">
+      <h1 id="toc-critical-data-overload-introduction" onclick="goToHeading('critical-data-overload-introduction')">Critical Data Overload: Introduction</h1>
+      <h2 id="toc-plan-for-the-day" onclick="goToHeading('plan-for-the-day')">Plan for the day</h2>
+      <h2 id="toc-introduction" onclick="goToHeading('introduction')">Introduction</h2>
+      <h3 id="toc-what" onclick="goToHeading('what')">What</h3>
+      <h3 id="toc-why" onclick="goToHeading('why')">Why</h3>
+      <h3 id="toc-how" onclick="goToHeading('how')">How</h3>
+      <h2 id="toc-thinking-about-data" onclick="goToHeading('thinking-about-data')">Thinking about data</h2>
+      <h2 id="toc-examples" onclick="goToHeading('examples')">Examples</h2>
+      <h2 id="toc-gathering-data" onclick="goToHeading('gathering-data')">Gathering data</h2>
+      <h2 id="toc-working-with-web-data" onclick="goToHeading('working-with-web-data')">Working with web data</h2>
+      <h2 id="toc-craigslist-example" onclick="goToHeading('craigslist-example')">Craigslist example</h2>
+      <h2 id="toc-homework" onclick="goToHeading('homework')">Homework</h2>
+    </div>
+    <main>
+      <div class="content">
+        <h1 id="critical-data-overload-introduction">Critical Data Overload: Introduction</h1>
+        <hr/>
+        <h2 id="plan-for-the-day">Plan for the day</h2>
+        <hr/>
+        <p>This morning:</p>
+        <ul>
+          <li>introduction (me, you, this workshop)</li>
+          <li>thinking about data, practically and critically</li>
+          <li>examples of work</li>
+        </ul>
+        <hr/>
+        <p>This afternoon:</p>
+        <ul>
+          <li>data collection techniques: scraping and requesting</li>
+          <li>scraping in HTML: the craigslist example</li>
+        </ul>
+        <hr/>
+        <h2 id="introduction">Introduction</h2>
+        <hr/>
+        <p>
+          Pierre Depaz (
+          <a href="https://pierredepaz.net" target="_blank">pierredepaz.net</a>
+          )
+        </p>
+        <p>political science, game design, comparative literature</p>
+        <p>i'm curious about how code affects our ways of thinking and acting.</p>
+        <hr/>
+        <p>You ? Name, experience with programming, why did you come to this workshop?</p>
+        <hr/>
+        <h3 id="what">What</h3>
+        <hr/>
+        <p>This workshop focuses on critically thinking about data through direct engagement.</p>
+        <p>Collecting datasets to better understand what it is, where it comes from, and what it can mean.</p>
+        <div class="notes invisible">
+          <p>this means understanding and working with data in a very practical way: through the systems we often interface with</p>
+        </div>
+        <hr/>
+        <h3 id="why">Why</h3>
+        <hr/>
+        <p>To provide concrete answers to some questions:</p>
+        <ul>
+          <li>what is data? when does it become information? what is this information about?</li>
+          <li>how is data distributed? how is it taken apart and recombined? what do technical systems reveal about data providers?</li>
+          <li>how do we re-present data in order to change its interpretation?</li>
+        </ul>
+        <p>(also as a starting point for Helin's class next semester)</p>
+        <hr/>
+        <h3 id="how">How</h3>
+        <p>Until Monday, we will collaboratively build new corpora of online data.</p>
+        <ol>
+          <li><strong>Identifying</strong> ways to think about data as a kind of corpus (research, conceptual thinking)</li>
+          <li><strong>Using</strong> the technical tools to acquire this data, and render it usable (programming, JS, Python)</li>
+          <li><strong>Reflecting</strong> on how to interface this data (sketching)</li>
+        </ol>
+        <div class="notes invisible">
+          <p>aka we create our own datasets in groups</p>
+        </div>
+        <hr/>
+        <h2 id="thinking-about-data">Thinking about data</h2>
+        <hr/>
+        <p>What is data?</p>
+        <div class="notes invisible">
+          <p>data is a pattern of symbols which can be made meaningful</p>
+        </div>
+        <hr/>
+        <p>Data is a pattern of symbols which can be made meaningful.</p>
+        <hr/>
+        <p>What is metadata?</p>
+        <div class="notes invisible">
+          <p>data about data, sketching things in the negative</p>
+        </div>
+        <hr/>
+        <p>Data is the new oil?</p>
+        <div class="notes invisible">
+          <p>Airbnb and Facebook started by scraping</p>
+        </div>
+        <hr/>
+        <p>Data as the by-product of systems: data vs. capta.</p>
+        <div class="notes invisible">
+          <p>Data comes from "given" in latin, but it's not alway given, rather it's "taken", captured, capta</p>
+        </div>
+        <hr/>
+        <p>What is the difference between data and information?</p>
+        <hr/>
+        <p>The mathematical theory of communication and <strong>the disappearance of meaning</strong>.</p>
+        <div class="notes invisible">
+          <p>so we need to represent, in order to interpret</p>
+        </div>
+        <hr/>
+        <p>What agency do we have when faced with a deluge of data? How do we make sense of it?</p>
+        <div class="notes invisible">
+          <p>Distance, or pivot is one way of doing it. Art is one way of providing a different perspective</p>
+        </div>
+        <hr/>
+        <p>Data is the <strong>raw material</strong> of digital technologies. It only becomes information through <strong>representation</strong>, which facilitates <strong>interpretation</strong>.</p>
+        <hr/>
+        <h2 id="examples">Examples</h2>
+        <hr/>
+        <p>Politics:</p>
+        <ul>
+          <li>
+            Sam Lavigne's 
+            <a href="https://lav.io/projects/get-well-soon/" target="_blank">Get Well Soon</a>
+            , 
+            <a href="https://lav.io/projects/cspan-5/" target="_blank">C-Span 5</a>
+            , 
+            <a href="https://lav.io/projects/occupied-bnb/" target="_blank">Occupied B&B</a>
+            (and the 
+            <a href="https://www.thenation.com/article/archive/airbnb-settlement-lawsuit-palestinian-challenge/" target="_blank">accompanying piece</a>
+            )
+          </li>
+          <li>
+            Winnie Soon's 
+            <a href="https://siusoon.net/projects/unerasablecharacters-i" target="_blank">Unerasable Characters</a>
+          </li>
+          <li>
+            Miao Ying's 
+            <a href="https://anthology.rhizome.org/blind-spot" target="_blank">Blind Spot</a>
+          </li>
+          <li>
+            Jack Sweeney's 
+            <a href="https://mastodon.social/@elonjet" target="_blank">ElonJet</a>
+          </li>
+          <li>
+            Lawrence Abu Hamdan's 
+            <a href="https://airpressure.info" target="_blank">Air Pressure</a>
+          </li>
+          <li>
+            Emma Sheffer's 
+            <a href="https://www.instagram.com/insta_repeat" target="_blank">Insta Repeat</a>
+          </li>
+          <li>
+            Luke DuBois's 
+            <a href="https://www.lukedubois.com/projects-2/perfect" target="_blank">A More Perfect Union</a>
+            and 
+            <a href="https://www.lukedubois.com/projects-2/billboard" target="_blank">Billboard</a>
+          </li>
+          <li>
+            Mark Hansen and Ben Rubin's 
+            <a href="https://vimeo.com/113240712" target="_blank">Moveable Type</a>
+          </li>
+          <li>
+            Josh Begley's 
+            <a href="http://prisonmap.com/about" target="_blank">Prison Map</a>
+            and 
+            <a href="https://x.com/dronestream" target="_blank">Drone Stream</a>
+            and 
+            <a href="https://theintercept.co/condolences/" target="_blank">Condolences</a>
+          </li>
+        </ul>
+        <p>Visual Culture:</p>
+        <ul>
+          <li>
+            Lev Manovich and his team's 
+            <a href="https://selfiecity.net" target="_blank">Selfie City</a>
+          </li>
+          <li>
+            Jason Salavon's 
+            <a href="http://salavon.com/work/SpecialMoments/" target="_blank">100 Special Moments</a>
+          </li>
+          <li>
+            Nicolas Malevé's 
+            <a href="https://www.youtube.com/watch?v=PC60JL-lMzA" target="_blank">12 Hours of ImageNet</a>
+          </li>
+          <li>
+            Aaron Swartz and Taryn Simon's 
+            <a href="https://anthology.rhizome.org/image-atlas" target="_blank">Image Atlas</a>
+          </li>
+        </ul>
+        <p>Multimedia:</p>
+        <ul>
+          <li>
+            <a href="https://truth-and-quantity.com" target="_blank">Truth and Quantity</a>
+          </li>
+          <li>
+            Riley Walz's 
+            <a href="https://walzr.com/IMG_0001" target="_blank">IMG_0001</a>
+          </li>
+          <li>
+            Pierre Depaz's 
+            <a href="https://realtime.enframed.net" target="_blank">Real Time Sound Cloud</a>
+          </li>
+          <li>
+            Hatnote's 
+            <a href="http://listen.hatnote.com" target="_blank">Listen to Wikipedia</a>
+          </li>
+          <li>
+            Kyle McDonald's 
+            <a href="https://youtu.be/mD7vs_Vw_P0?si=HmtWzD_R_zEqV_x6" target="_blank">Spotify Serendipity</a>
+          </li>
+          <li>
+            Disnovation.org's 
+            <a href="https://disnovation.org/piratecinema.php" target="_blank">Pirate Cinema</a>
+          </li>
+        </ul>
+        <p>Misc:</p>
+        <ul>
+          <li>
+            Mimi Onuha's 
+            <a href="https://github.com/MimiOnuoha/missing-datasets" target="_blank">Missing Datasets</a>
+          </li>
+          <li>
+            <a href="https://www.flickr.org/programs/content-mobility/data-lifeboat/" target="_blank">Flickr's Data Lifeboat</a>
+          </li>
+        </ul>
+        <hr/>
+        <p>Critical data explorations is shaping a material to represent something about a system (critically, poetically, both)</p>
+        <hr/>
+        <p>MAHLZEIT</p>
+        <hr/>
+        <h2 id="gathering-data">Gathering data</h2>
+        <hr/>
+        <p><strong>Scraping</strong> is the process of taking apart a webpage.</p>
+        <p>If you see it on your browser, it's already in your computer.</p>
+        <hr/>
+        <p><strong>Interfacing</strong> is the process of asking for data from a specialized service (an <em>Application Programming Interface</em>)</p>
+        <hr/>
+        <p>Both can be automated!</p>
+        <hr/>
+        <h2 id="working-with-web-data">Working with web data</h2>
+        <hr/>
+        <p>Data <strong>markups</strong></p>
+        <pre><code lang="html"><element attribute="value">some text</element></code></pre>
+        <hr/>
+        <p>Anatomy of a webpage a.k.a Developer Tools are your best friends!</p>
+        <p>(please don't use safari)</p>
+        <ul>
+          <li>menu > more tools > developer tools > elements</li>
+        </ul>
+        <hr/>
+        <h2 id="craigslist-example">Craigslist example</h2>
+        <hr/>
+        <p>First things first, installing tools:</p>
+        <ul>
+          <li>Python</li>
+          <li>NodeJS</li>
+        </ul>
+        <hr/>
+        <ol>
+          <li>Analysis</li>
+          <li>Testing</li>
+          <li>Navigating</li>
+        </ol>
+        <hr/>
+        <p>Analysis</p>
+        <ul>
+          <li>what does the site architecture look like?</li>
+          <li>how do i get from one page to another?</li>
+          <li>what does the markup looklike?</li>
+          <li>are there any <code>class</code> or <code>id</code> we can use?</li>
+          <li>is there any pattern we can build on?</li>
+        </ul>
+        <hr/>
+        <p>Testing</p>
+        <ul>
+          <li>write a small <strong>page scraper</strong> that goes directly to a specific page</li>
+          <li>log the elements as we find them</li>
+          <li>save them to a file</li>
+        </ul>
+        <hr/>
+        <p>Navigating</p>
+        <ul>
+          <li>write small piece of code that visits every page</li>
+          <li>connect it to our <strong>page scraper</strong></li>
+        </ul>
+        <hr/>
+        <p>_<em>Exercise</em></p>
+        <p>find a news website and extract all the headlines you can find with one or more particular words (e.g. "says", "trial").</p>
+        <hr/>
+        <h2 id="homework">Homework</h2>
+        <ul>
+          <li>
+            <strong>read</strong>: 
+            <a href="https://read.dukeupress.edu/critical-ai/article-abstract/doi/10.1215/2834703X-10734046/382464/Scrapism-A-Manifesto" target="_blank"></a>
+            <em>Scrapism, A Manifesto</em> by Sam Lavigne
+          </li>
+          <li><strong>think</strong>: what kinds of data would you like to collect? which system are you interested in?</li>
+        </ul>
+      </div>
+      <div class="footnotes">
+        <h2 class="invisible">Appendix</h2>
+        <ol class="footnotes"></ol>
+      </div>
+    </main>
+    <footer>
+      <div class="button-holder">
+        <button onclick="toggleNotes()">notes</button>
+        <button onclick="setFullscreen()">screen</button>
+      </div>
+    </footer>
+  </body>
+</html>

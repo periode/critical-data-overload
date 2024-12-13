@@ -49,6 +49,13 @@ Misc:
 
 ## Technical
 
+### Command line
+
+- `cd <name_of_directory>` enters a folder (e.g. `cd Documents`)
+- `cd ..` exits the folder (goes to the folder above)
+- `ls` (osx) `dir` (windows) lists all the contents of a folder
+- `pwd` (osx) `cd` (windows) shows the current folder you're in
+
 ### Tools
 
 - [artoo.js](https://medialab.github.io/artoo/), scraping in JavaScript.
@@ -72,3 +79,4 @@ Misc:
 - [History of APIS](https://github.com/lmccart/itp-critical-apis/wiki/Survey)
 - [The Intimacy of the Command-Line](http://scan.net.au/scn/journal/vol10number2/Nancy-Mauro-Flude.html)
 - [View Source](https://viewsource.info)
+- [Bellingcat Investigation toolkit](https://docs.google.com/spreadsheets/d/18rtqh8EG2q1xBo2cLNyhIDuK9jrPGwYr9DI2UncoqJQ/edit?gid=1575012979#gid=1575012979)
