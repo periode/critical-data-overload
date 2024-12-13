@@ -2,12 +2,15 @@
 import requests
 
 def getPage(target):
+    # first, we request the page
     r = requests.get(target)
-    data = r.json() # here we get the data as json
+    
+    # here we get the data as json
+    data = r.json()
     stock_images = [] # we ready our empty list to fill with our results
     for d in data:
         image_url = d['jetpack_featured_media_url'] # we know this is the field with the image thanks to our inspection
-        if "Getty" in image_url: #we check if the image is a stock image
+        if "Getty" in image_url: # we check if the image is a stock image (if the image file contains the word "Getty")
             # print(image_url)
             stock_images.append(image_url)
             
