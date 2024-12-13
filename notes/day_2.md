@@ -63,6 +63,8 @@ The web is a database
 - servers (as in control)
 - URLs and query parameters
 
+![parts of a url](./assets/parts-of-url.png)
+
 <!--
 
 maybe discussing a bit more how the web works, what is a URL, what is a server
@@ -216,6 +218,36 @@ MAHLZEIT (think about it over lunch)
 
 ---
 
+## Groups
+
+- julian, simon
+- feng, lena
+- johanna, tillman, soo
+- marc, finn
+- denise, kristian, tim
+- eunsong, shin
+
+---
+
+## Python recap
+
+---
+
+Moving around in the terminal/command prompt/command line
+
+---
+
+Four basics of programming
+
+---
+
+1. variables
+2. functions
+3. loops
+4. conditional statements
+
+---
+
 ## Working with an API
 
 ---
@@ -294,6 +326,14 @@ Group work to figure out how exactly you're going to get this data:
 - what are the most appropriate tools to tackle the issue? are there any obvious problems that need to be solved?
 
 Test early, fail early, solve early!
+
+---
+
+Tools:
+
+- existing datasets
+- browser orchestration
+- ready-made systems (minet)
 
 ---
 
