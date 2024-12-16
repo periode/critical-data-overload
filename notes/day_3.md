@@ -174,6 +174,11 @@ Is it a restitution, or an interpretation?
 
 ## Presentations
 
-- Helin is joining
-- Each presenting group connects to Zoom and shares screen
-- Talk about what you did, why and how, and how you might consider developing it
+- Helin is joining ✨
+- For each group, connect to Zoom and share screen (link in Discord)
+
+Questions:
+
+- What data did you gather? Why?
+- How did the gathering go? What did you use and what were some obstacles?
+- How do you imagine using this data afterwards?

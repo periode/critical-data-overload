@@ -225,7 +225,7 @@ MAHLZEIT (think about it over lunch)
 - johanna, tillman, soo
 - marc, finn
 - denise, kristian, tim
-- eunsong, shin
+- eunsong, dongwook
 
 ---
 
