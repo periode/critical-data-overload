@@ -1,937 +1,304 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-    <title>publi | day_2.md</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Data Overloads</title>
     <style>
-      :root {
-      --fg-color: rgb(51, 51, 51);
-      --bg-color: rgb(250, 250, 247);
+        :root {
+            --fg-color: rgb(51, 51, 51);
+            --bg-color: rgb(250, 250, 247);
 
-      --sans-serif: "Open Sans";
-      --serif: "Crimson Pro";
+            --sans-serif: "Open Sans";
+            --serif: "Crimson Pro";
 
-      --margin: 5px;
-      }
+            --margin: 5px;
+        }
 
-      /* SANS-SERIF FONT */
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-VariableFont_wdthwght.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 400;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 400;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic-VariableFont_wdthwght.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 300;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light.woff") format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 300;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-LightItalic.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 600;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBold.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 600;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBoldItalic.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 700;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Bold.woff") format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 700;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-BoldItalic.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 800;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBold.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 800;
-      src: local("Open Sans"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBoldItalic.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans Light";
-      font-style: normal;
-      font-weight: 300;
-      src: local("Open Sans Light"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light-webfont.woff")
-      format("woff");
-      }
-      @font-face {
-      font-family: "Open Sans Condensed";
-      font-style: normal;
-      font-weight: 700;
-      src: local("Open Sans Condensed"),
-      url("https://fonts.cdnfonts.com/s/14884/OpenSans-CondBold.woff")
-      format("woff");
-      }
+        /* SANS-SERIF FONT */
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff") format("woff");
+        }
 
-      /* SERIF FONT */
-      @font-face {
-      font-family: 'Crimson Pro';
-      font-style: normal;
-      font-weight: 400;
-      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro[wght].woff') format('woff');
-      }
-      @font-face {
-      font-family: 'Crimson Pro';
-      font-style: italic;
-      font-weight: 400;
-      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-Italic[wght].woff') format('woff');
-      }
-      @font-face {
-      font-family: 'Crimson Pro';
-      font-style: normal;
-      font-weight: 200;
-      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLight.woff') format('woff');
-      }
-      @font-face {
-      font-family: 'Crimson Pro';
-      font-style: italic;
-      font-weight: 200;
-      src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLightItalic.woff') format('woff');
-      }
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Regular.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-VariableFont_wdthwght.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 400;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 400;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Italic-VariableFont_wdthwght.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 300;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 300;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-LightItalic.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 600;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBold.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 600;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-SemiBoldItalic.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Bold.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 700;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-BoldItalic.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 800;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBold.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-weight: 800;
+            src: local("Open Sans"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-ExtraBoldItalic.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans Light";
+            font-style: normal;
+            font-weight: 300;
+            src: local("Open Sans Light"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-Light-webfont.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "Open Sans Condensed";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Open Sans Condensed"),
+                url("https://fonts.cdnfonts.com/s/14884/OpenSans-CondBold.woff") format("woff");
+        }
+
+        /* SERIF FONT */
+        @font-face {
+            font-family: 'Crimson Pro';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro[wght].woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Crimson Pro';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-Italic[wght].woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Crimson Pro';
+            font-style: normal;
+            font-weight: 200;
+            src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLight.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Crimson Pro';
+            font-style: italic;
+            font-weight: 200;
+            src: local('Crimson Pro'), url('https://fonts.cdnfonts.com/s/29946/CrimsonPro-ExtraLightItalic.woff') format('woff');
+        }
 
 
 
-      /* GENERAL ELEMENTS */
+        /* GENERAL ELEMENTS */
 
-      html {
-      font-size: 18pt;
-      }
+        html {
+            font-size: 18pt;
+        }
 
-      @media screen and (max-width: 1000px) {
-      main {
-      font-size: 24pt;
-      }
-      }
+        @media screen and (max-width: 1000px) {
+            main {
+                font-size: 24pt;
+            }
+        }
 
-      body {
-      margin: 0;
-      color: var(--fg-color);
-      background-color: var(--bg-color);
-      }
+        body {
+            margin: 0;
+            color: var(--fg-color);
+            background-color: var(--bg-color);
+        }
 
-      main {
-      width: 60vw;
-      margin: auto;
-      padding-bottom: 30vh;
-      }
+        main {
+            width: 60vw;
+            margin: auto;
+            padding-bottom: 30vh;
+        }
 
-      @media screen and (max-width: 1000px) {
-      main {
-      width: 75vw;
-      font-size: 24pt;
-      margin-left: 5vw;
-      margin-right: 0;
-      }
-      }
+        @media screen and (max-width: 1000px) {
+            main {
+                width: 75vw;
+                font-size: 24pt;
+                margin-left: 5vw;
+                margin-right: 0;
+            }
+        }
 
-      img {
-      max-height: 60vh;
-      max-width: 100%;
-      }
+        img {
+            max-height: 60vh;
+            max-width: 100%;
+        }
 
-      hr {
-      border: none;
-      }
+        hr {
+            border: none;
+        }
 
-      a {
-      color: var(--fg-color);
-      }
+        a {
+            color: var(--fg-color);
+        }
 
-      pre {
-      white-space: break-spaces;
-      overflow-x: hidden;
-      }
+        pre {
+            white-space: break-spaces;
+            overflow-x: hidden;
+        }
 
-      footer {
-      position: fixed;
-      bottom: 0;
-      }
+        footer {
+            position: fixed;
+            bottom: 0;
+        }
 
-      h1,
-      h2,
-      h3 {
-      font-family: var(--serif), serif;
-      font-style: normal;
-      font-weight: normal;
-      }
+        h1,
+        h2,
+        h3 {
+            font-family: var(--serif), serif;
+            font-style: normal;
+            font-weight: normal;
+        }
 
-      .footnote-link {
-      vertical-align: super;
-      font-size: 0.8em;
-      cursor: pointer;
-      }
+        h1{
+            margin-top: 10vh;
+        }
 
-      emph {
-      font-style: italic;
-      }
+        /* CONTENT */
 
-      /* CONTENT */
+        p,
+        figcaption,
+        div.notes,
+        ol,
+        ul {
+            font-family: var(--sans-serif), serif;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
 
-      p,
-      figcaption,
-      div.notes,
-      ol,
-      ul {
-      font-family: var(--sans-serif), serif;
-      margin-top: 1em;
-      margin-bottom: 1em;
-      }
-
-      div.notes p {
-      font-style: italic;
-      font-size: 0.9em;
-      }
-
-      figure{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      }
-
-      figcaption {
-      font-size: 0.8em;
-      }
-
-      pre {
-      background-color: #eee;
-      padding: 5px;
-      border: 1px solid #aaa;
-      }
-
-      quote p {
-      font-family: var(--sans-serif), serif;
-      display: block;
-      font-style: italic;
-      border-left: 2px solid black;
-      padding: 1em;
-      margin-left: 1em;
-      background-color: rgb(255, 250, 200);
-      }
-
-      li {
-      font-family: var(--sans-serif), serif;
-      margin-bottom: 5px;
-      }
+        .meta {
+            font-size: 0.8em;
+            display:flex;
+            justify-content: space-between;
+        }
     </style>
-    <style>
-      /* SNAP SCROLL */
+</head>
 
-      /* main {
-      scroll-snap-type: y mandatory;
-      height:100vh;
-      overflow-y: scroll;
-
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      }
-
-      main::-webkit-scrollbar {
-      display: none;
-      }
-
-      main h1, main h2, main h3 {
-      scroll-snap-align: start;
-      } */
-
-      main {
-      display: flex;
-      gap: 20px;
-      }
-
-      hr {
-      height: 90vh;
-      }
-
-      h1,
-      h2,
-      h3 {
-      margin-top: 30vh;
-      padding-top: 10vh;
-      }
-
-      main h1,
-      main h2,
-      main h3 {
-      border-bottom: 2px solid var(--fg-color);
-      padding-bottom: 10px;
-      }
-
-      h1 {
-      font-size: 4em;
-      }
-
-      h2 {
-      font-size: 3em;
-      }
-
-      h3 {
-      font-size: 2em;
-      }
-
-      p {
-      font-size: 1.1em;
-      }
-
-      pre {
-      overflow-x: auto;
-      }
-
-      figure {
-      margin: 0;
-      align-items: start;
-      }
-
-      /* CONTENT */
-
-      .content {
-      width: 100%;
-      }
-
-      .notes {
-      font-size: 0.9em;
-      }
-
-      .invisible {
-      display: none;
-      }
-
-      /* TABLE OF CONTENTS */
-
-      .toc {
-      position: fixed;
-      top: 0;
-      bottom: var(--margin);
-      right: var(--margin);
-      max-width: 15vw;
-      margin: 5px;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      place-content: end;
-
-      font-size: 20pt;
-      }
-
-      @media screen and (max-width: 1000px) {
-      .toc {
-      max-width: 20vw;
-      font-size: 28pt;
-      }
-      }
-
-      .toc h1,
-      .toc h2,
-      .toc h3 {
-      font-family: var(--sans-serif), sans-serif;
-      margin: 0;
-      padding: 0;
-      }
-
-      .toc h1 {
-      font-family: var(--serif);
-      position: fixed;
-      top: var(--margin);
-      right: var(--margin);
-      max-width: 15vw;
-      margin: 5px;
-      padding: 0;
-      }
-
-      @media screen and (max-width: 1000px) {
-      .toc h1 {
-      max-width: 20vw;
-      }
-      }
-
-      .toc h2,
-      .toc h3 {
-      cursor: pointer;
-      }
-
-      .toc h2:hover,
-      .toc h3:hover {
-      text-decoration: underline;
-      }
-
-      .toc h1 {
-      font-size: 1em;
-      }
-
-      .toc h2 {
-      font-size: 0.8em;
-      margin-top: 3px;
-      margin-bottom: 0px;
-      }
-
-      .toc h3 {
-      font-size: 0.6em;
-      }
-
-      .current-heading {
-      font-weight: bold;
-      }
-
-      /* FOOTNOTES */
-
-      .footnotes {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin-bottom: var(--margin);
-      }
-
-      .footnotes ol {
-      width: 60vw;
-      margin: auto;
-      padding-left: 0;
-
-      display: flex;
-      flex-direction: column;
-      background-color: var(--bg-color);
-      list-style: none;
-
-      font-size: 0.8em;
-      }
-
-      @media screen and (max-width: 1000px) {
-      .footnotes ol {
-      width: 70vw;
-      font-size: 0.9em;
-      text-align: center;
-      }
-      }
-
-      .footnotes li::before {
-      content: attr(data-footnote-id);
-      margin-right: 2px;
-      vertical-align: super;
-      font-size: 0.7em;
-      }
-
-      /* INTERFACE */
-
-      button {
-      background-color: var(--bg-color);
-      cursor: pointer;
-      }
-
-      .button-holder {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin: 5px;
-      }
-
-      .button-holder button {
-      font-size: 0.6em;
-      }
-
-      @media screen and (max-width: 1000px) {
-      .button-holder button {
-      font-size: 1.2em;
-      }
-      }
-
-      /* COMPLETION ANIMATION */
-
-      @keyframes scaleProgress {
-      0% {
-      transform: scaleY(0);
-      }
-      100% {
-      transform: scaleY(1);
-      }
-      }
-
-      .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      transform-origin: top;
-      animation: scaleProgress auto linear;
-      animation-timeline: scroll(root);
-      background-color: black;
-      width: 3px;
-      height: 100vh;
-      }
-    </style>
-    <script></script>
-    <script>
-      'use strict';
-
-      const init = () => {
-      initHeadingsObserver()
-      initFootnotesObserver();
-      }
-
-      const initFootnotesObserver = () => {
-      const options = {
-      root: null,
-      rootMargin: "-10%",
-      threshold: 1.0,
-      };
-
-      const refs = document.querySelectorAll(".footnote-link")
-      const toggleFootnoteVisibility = (entries) => {
-      entries.forEach((entry) => {
-      const id = entry.target.dataset.id
-      const fn = document.getElementById(`footnote-${id}`)
-      if (!fn) {
-      console.warn(`could not find footnote #${id}`)
-      return
-      }
-      if (entry.intersectionRatio === 1) {
-      fn.classList.remove("invisible")
-      } else {
-      fn.classList.add("invisible")
-      }
-      })
-      }
-
-      const observer = new IntersectionObserver(toggleFootnoteVisibility, options);
-      refs.forEach(r => observer.observe(r))
-      }
-
-      const initHeadingsObserver = () => {
-      document.querySelectorAll(".toc h3").forEach(e => e.classList.add("invisible"))
-
-      const options = {
-      root: null,
-      rootMargin: "-10%",
-      threshold: 1.0,
-      };
-
-      const h2 = document.querySelectorAll("main h2")
-      const h3 = document.querySelectorAll("main h3")
-      const headings = [...h2, ...h3]
-
-      let current;
-      const toggleToCHighlight = (entries) => {
-      entries.forEach((entry) => {
-      var el = document.querySelector(`.toc #toc-${entry.target.id}`)
-      if (entry.intersectionRatio > 0.9) {
-      if (current === el) return
-
-      // set current style
-      if (current) current.classList.remove("current-heading")
-      el.classList.add("current-heading")
-      current = el
-
-      // toggle sub-heading visibility
-      if (el.tagName == "H2") {
-      document.querySelectorAll(".toc h3").forEach(e => e.classList.add("invisible"))
-      let sibling = el.nextElementSibling
-
-      while (sibling != null && sibling.tagName == "H3") {
-      sibling.classList.remove("invisible")
-      sibling = sibling.nextElementSibling
-      }
-      }
-      }
-      });
-      };
-
-      const observer = new IntersectionObserver(toggleToCHighlight, options);
-      headings.forEach(h => observer.observe(h))
-      }
-
-      const setFullscreen = () => {
-      document.documentElement.requestFullscreen()
-      }
-
-      const toggleNotes = () => {
-      let els = document.querySelectorAll(".notes")
-      if (els) els.forEach(e => e.classList.toggle("invisible"))
-      else console.warn("could not find notes")
-      }
-
-      const goToHeading = (anchor) => {
-      const el = document.getElementById(anchor)
-      if (el) el.scrollIntoView({ behavior: "smooth" })
-      else console.warn("could not find heading with anchor", anchor)
-      }
-    </script>
-  </head>
-  <body onload="init()">
-    <div class="progress"></div>
-    <header></header>
-    <div class="toc">
-      <h1 id="toc-critical-data-overloads-acquisition" onclick="goToHeading('critical-data-overloads-acquisition')">Critical Data Overloads: Acquisition</h1>
-      <h2 id="toc-plan-for-the-day" onclick="goToHeading('plan-for-the-day')">Plan for the day</h2>
-      <h2 id="toc-scrapism-a-manifesto" onclick="goToHeading('scrapism-a-manifesto')">Scrapism: A Manifesto</h2>
-      <h2 id="toc-identifying-a-corpus" onclick="goToHeading('identifying-a-corpus')">Identifying a corpus</h2>
-      <h2 id="toc-groups" onclick="goToHeading('groups')">Groups</h2>
-      <h2 id="toc-python-recap" onclick="goToHeading('python-recap')">Python recap</h2>
-      <h2 id="toc-working-with-an-api" onclick="goToHeading('working-with-an-api')">Working with an API</h2>
-      <h2 id="toc-strategies-and-tactics" onclick="goToHeading('strategies-and-tactics')">Strategies and tactics</h2>
-      <h2 id="toc-homework" onclick="goToHeading('homework')">Homework</h2>
-    </div>
+<body>
     <main>
-      <div class="content">
-        <h1 id="critical-data-overloads-acquisition">Critical Data Overloads: Acquisition</h1>
-        <hr/>
-        <h2 id="plan-for-the-day">Plan for the day</h2>
-        <hr/>
-        <p>This morning:</p>
-        <ul>
-          <li>discussing scrapism</li>
-          <li>identifying a corpus</li>
-          <li>exchanging ideas and forming groups</li>
-        </ul>
-        <hr/>
-        <p>This afternoon:</p>
-        <ul>
-          <li>Python recap</li>
-          <li>interfacing with an API</li>
-          <li>other tools and techniques for data collection</li>
-          <li>discussing corpus ideas and tactics</li>
-        </ul>
-        <hr/>
-        <h2 id="scrapism-a-manifesto">Scrapism: A Manifesto</h2>
-        <hr/>
-        <p>
-          What did you think of 
-          <a href="lav.io/media/scrapism.pdf" target="_blank">the reading</a>
-          ?
-        </p>
-        <p>What kind of scrapism resonates</p>
-        <ul>
-          <li>political intervention</li>
-          <li>public archive</li>
-          <li>activated archive?</li>
-        </ul>
-        <hr/>
-        <p>What about the grey legal areas?</p>
-        <p>Does data, or the web, obey different economic laws?</p>
-        <hr/>
-        <quote>
-          <p>Art is a breach in the system<a data-id="1" class="footnote-link">1</a></p>
-        </quote>
-        <div class="notes invisible">
-          <p>Where does the data come from, how do systems communicate with one another?</p>
-          <p>The machine exchange of data, back to Shannon</p>
+        <h1>Critical Data Overloads</h1>
+        <div class="meta">
+
+            <p>Pierre Depaz (<a href="mailto:pierre@enframed.net" target="_blank" rel="noopener noreferrer">mail</a> - <a href="http://pierredepaz.net" target="_blank" rel="noopener noreferrer">www</a>)</p>
+            <p><a href="https://vvz.hfg-karlsruhe.de/v/2024ws/d88b1603" target="_blank" rel="noopener noreferrer">HfG Karlsruhe WiSe 2024</a></p>
         </div>
-        <hr/>
-        <p>The web is a database</p>
-        <ul>
-          <li>servers (as in storage)</li>
-          <li>servers (as in control)</li>
-          <li>URLs and query parameters</li>
-        </ul>
-        <p>
-          <div>
-            <figure>
-            <img src="./assets/parts-of-url.png" alt="parts of a url"/>
-            <figcaption>parts of a url</figcaption>
-            <figure>
-          </div>
-        </p>
-        <div class="notes invisible">
-          <p>maybe discussing a bit more how the web works, what is a URL, what is a server</p>
+            <div>
+            <p> This workshop introduces the students to <i>scraping</i> as a critical artistic practice. Scraping consists
+                in
+                designing and executing mass data gathering on the web, recombined and represented in a process of
+                <i>gestalt</i>, in which the whole is more than the sum of its parts. What can we express through
+                collecting
+                every single review on Yelp? Every picture on Tumblr? Every statement from the Minister of Finances?
+                Every
+                apartment listing on wg-gesucht.de? Every picture from leading curator’s Instagram accounts? Every video
+                posted by various telegram channels?
+            </p>
+            <p>The Web is constantly flooded with data, both overwhelming us and invisible in whole. By learning how to
+                extract such data, we will learn how to cast a different eye on the platforms which provide it, on the
+                visual and lexical cultures to which they belong, and on the scale of media production in our era. We
+                will
+                be rooting this perspective in pre-digital practices, particulary in the <i>collage</i> and
+                <i>dérive</i> of
+                surrealists, but also come to see the digital in general, and the Web in particular, as a <i>material</i>
+                which
+                can be worked with in very specific ways.
+            </p>
         </div>
-        <hr/>
-        <p>Understanding systems by looking in their databases.</p>
-        <p>How you classify things classifies you<a data-id="2" class="footnote-link">2</a><a data-id="3" class="footnote-link">3</a>, and what is made visible is made political<a data-id="4" class="footnote-link">4</a></p>
-        <div class="notes invisible">
-          <p>The filings and the documents by economical and governmental organizations provide a lot of insight</p>
-          <p>How you classify things reveal things about you (miller, artefacts). Taste in spotify is kinda machine-generated</p>
-        </div>
-        <hr/>
-        <p>The web as a bureaucracy:</p>
-        <p>from machine <strong>into</strong> the machine.</p>
-        <div class="notes invisible">
-          <p>Machine in the Kafka sense of the term.</p>
-          <p>The mechanical processing of standardized inputs.</p>
-          <p>What kinds of machines can we think of?</p>
-          <p>School, hospital, military, entertainment.</p>
-        </div>
-        <hr/>
-        <p>The web as an artwork:</p>
-        <p>from machine <strong>out of</strong> the machine.</p>
-        <div class="notes invisible">
-          <p>By re-contextualizing, you give a different interpretation, a different light on the same data.</p>
-        </div>
-        <hr/>
-        <h2 id="identifying-a-corpus">Identifying a corpus</h2>
-        <hr/>
-        <p>Turning a dataset into a <strong>corpus</strong>.</p>
-        <p>The purpose of a corpus is to learn something from it, and to communicate these findings to others.</p>
-        <div class="notes invisible">
-          <p>A corpus is something that can be studied, that has an interest in terms of research. It means we can learn things from it.</p>
-          <p>But what things?</p>
-          <p>First, what are the kinds of things to consider when imagining a corpus?</p>
-        </div>
-        <hr/>
-        <p><strong>Intra</strong>-textuality is the comparison of different parts of the same text, and allows to reveal repeating patterns.</p>
-        <hr/>
-        <p>It can highlight some broad themes, blurry but evocative</p>
-        <p>"I am 20 years old and..."</p>
-        <p>
-          <a href="https://www.reddit.com/r/googlepoems/" target="_blank">r/googlepoems</a>
-        </p>
-        <hr/>
-        <p>It can highlight some structures.</p>
-        <p>
-          <div>
-            <figure>
-            <img src="./assets/cirio_art_system.jpg" alt="Paolo Cirio's Art Commodities, 2014"/>
-            <figcaption>Paolo Cirio's Art Commodities, 2014</figcaption>
-            <figure>
-          </div>
-        </p>
-        <hr/>
-        <p><strong>Inter</strong>-textuality is the comparison of parts of different texts, showing how they are connected.</p>
-        <p>
-          <div>
-            <figure>
-            <img src="./assets/barr_cubism_abstract_art.jpg" alt="Alfred Barr, Cubism and Abstract Art, 1936"/>
-            <figcaption>Alfred Barr, Cubism and Abstract Art, 1936</figcaption>
-            <figure>
-          </div>
-        </p>
-        <p>
-          <div>
-            <figure>
-            <img src="./assets/thomas_colonialism_abstract_art.jpg" alt="Hank Willis Thomas, Colonialism and Abstract Art, 2020"/>
-            <figcaption>Hank Willis Thomas, Colonialism and Abstract Art, 2020</figcaption>
-            <figure>
-          </div>
-        </p>
-        <hr/>
-        <p><strong>Inter</strong>-textuality also recreates networks of dependencies.</p>
-        <p>(Google Analytics, WordPress)</p>
-        <hr/>
-        <p>A comparative approach puts the focus on <strong>what is different</strong> and <strong>what is the same</strong>.</p>
-        <hr/>
-        <p>Finding a topic:</p>
+        <h2>Workshop notes</h2>
         <ul>
-          <li>What <strong>culture</strong> do you want to explore?</li>
-          <li>What <strong>system</strong> do you want to reveal?</li>
-          <li>What <strong>themes</strong> do you want to address?</li>
+            <li><a href="day_1.html">Day 1: Introductions</a></li>
+            <li><a href="day_2.html">Day 2: Acquisition</a></li>
+            <li><a href="day_3.html">Day 3: Restitution</a></li>
         </ul>
-        <div class="notes invisible">
-          <p>Culture is about the imaginaries, the practices, the common beliefs that link us together. How people express themselves, e.g.</p>
-          <p>System is about the invisible connections and arrangements that are fixed in place in order to achieve something.</p>
-          <p>10 minutes to write down 4-5 of them</p>
-        </div>
-        <hr/>
-        <p>Creative constraints:</p>
+
+        <h2>Workshop links</h2>
         <ul>
-          <li>It should not already exist (but you can use existing datasets).</li>
-          <li>It should be large (> 500) (a change in quantity can become a change in quality).</li>
+            <li><a href="http://github.com/periode/critical-data-overload" target="_blank" rel="noopener noreferrer">Code</a></li>
+            <li><a href="https://github.com/periode/critical-data-overload/blob/main/Resources.md" target="_blank" rel="noopener noreferrer">Resources</a></li>
         </ul>
-        <div class="notes invisible">
-          <p>Take the rest of the morning to start googling around</p>
-        </div>
-        <p>Presenting our ideas (Miro board)</p>
-        <hr/>
-        <p>Finding the data:</p>
-        <ul>
-          <li>How does this data manifest itself on the web?</li>
-          <li>Who <strong>produces</strong> this data? What are the organizations that circulate this data? What are the organizations who <strong>use</strong> this data?</li>
-          <li>Is it on a webpage? on an app? served over an API? Do you have to cross-reference multiple sources to find it?</li>
-        </ul>
-        <hr/>
-        <p>MAHLZEIT (think about it over lunch)</p>
-        <hr/>
-        <h2 id="groups">Groups</h2>
-        <hr/>
-        <h2 id="python-recap">Python recap</h2>
-        <hr/>
-        <p>Moving around in the terminal/command prompt/command line</p>
-        <hr/>
-        <p>Four basics of programming</p>
-        <hr/>
-        <ol>
-          <li>variables</li>
-          <li>functions</li>
-          <li>loops</li>
-          <li>conditional statements</li>
-        </ol>
-        <hr/>
-        <h2 id="working-with-an-api">Working with an API</h2>
-        <hr/>
-        <p>The overal model:</p>
-        <p>You < API > Data</p>
-        <p>
-          <div>
-            <figure>
-            <img src="./assets/api.png" alt="A simple API model"/>
-            <figcaption>A simple API model</figcaption>
-            <figure>
-          </div>
-        </p>
-        <hr/>
-        <p>Moving parts:</p>
-        <ul>
-          <li>the data models</li>
-          <li>the access key</li>
-        </ul>
-        <hr/>
-        <p>Data <strong>structures</strong></p>
-        <p><code>JSON</code> is the default way of exchanging information on the web.</p>
-        <pre><code lang="js">{
-    "key": "value",
-    "key2": [
-        "value1",
-        "value2"
-    ],
-    "key3": {
-        "key4": "value3",
-        "key5": [
-            "value4",
-            "value5"
-        ]
-    }
-}</code></pre>
-        <hr/>
-        <p>The data model is how the data is represented by a specific organization.</p>
-        <p>
-          For instance, 
-          <a href="https://developers.google.com/youtube/v3/docs/videos" target="_blank">YouTube</a>
-          , 
-          <a href="https://developers.soundcloud.com/docs/api/explorer/open-api#/tracks/get_tracks__track_id_" target="_blank">SoundCloud</a>
-          and 
-          <a href="https://developer.spotify.com/documentation/web-api/reference/get-track" target="_blank">Spotify</a>
-          represent a song in different ways.
-        </p>
-        <hr/>
-        <p>The access key is a unique identifier that protects the organization from abuse.</p>
-        <p>You can either <strong>apply for one</strong> or <strong>borrow one</strong>.</p>
-        <hr/>
-        <p><strong>Example</strong>: getting all stock images used to illustrate a tech website.</p>
-        <hr/>
-        <p><strong>Example</strong>: getting all tracks on soundcloud that have less than 5 plays.</p>
-        <ol>
-          <li>examining the soundcloud model</li>
-          <li>borrowing a key</li>
-          <li>requesting a track</li>
-          <li>starting somewhere</li>
-        </ol>
-        <hr/>
-        <h2 id="strategies-and-tactics">Strategies and tactics</h2>
-        <hr/>
-        <p>Group work to figure out how exactly you're going to get this data:</p>
-        <ul>
-          <li>what are the sources? how accessible are they? are there <strong>proxies</strong>? is there anything missing from them?</li>
-          <li>what are the data models? what are the markups?</li>
-          <li>what are the most appropriate tools to tackle the issue? are there any obvious problems that need to be solved?</li>
-        </ul>
-        <p>Test early, fail early, solve early!</p>
-        <hr/>
-        <p>Tools:</p>
-        <ul>
-          <li>existing datasets</li>
-          <li>browser orchestration</li>
-          <li>ready-made systems (minet)</li>
-        </ul>
-        <hr/>
-        <h2 id="homework">Homework</h2>
-        <ul>
-          <li><strong>consider</strong> consulting Pierre over the weekend for conceptual and technical issues (room 320).</li>
-          <li><strong>collect</strong> your corpus, and come ready to present it to your classmates.</li>
-        </ul>
-      </div>
-      <div class="footnotes">
-        <h2 class="invisible">Appendix</h2>
-        <ol class="footnotes">
-          <li id="footnote-1" class="footnote invisible"> Vera Molnar</li>
-          <li id="footnote-2" class="footnote invisible">
-            Bourdieu, P. (1970) 
-            <emph>Distinction: A Social Critique of the Judgment of Taste</emph>
-            .
-          </li>
-          <li id="footnote-3" class="footnote invisible">
-            Miller, D., (2002) 
-            <emph>Artefacts or the meaning of things</emph>
-            .
-          </li>
-          <li id="footnote-4" class="footnote invisible">
-            Rancière, J., (2000) 
-            <emph>Le partage du sensible</emph>
-            .
-          </li>
-        </ol>
-      </div>
     </main>
-    <footer>
-      <div class="button-holder">
-        <button onclick="toggleNotes()">notes</button>
-        <button onclick="setFullscreen()">screen</button>
-      </div>
-    </footer>
-  </body>
+</body>
+
 </html>

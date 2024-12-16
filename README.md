@@ -14,6 +14,13 @@ __Lecturer:__ Pierre Depaz ([pierre.depaz@nyu.edu](mailto:pierre.depaz@nyu.edu))
 
 __Schein__: Workshop Schein MK
 
+## Workshop notes
+
+Workshop notes are available:
+
+- as [markdown](./notes)
+- as [a website](https://periode.github.io/critical-data-overload)
+
 ## Introduction
 
 This workshop introduces the students to _scraping_ as a critical artistic practice. Scraping consists in designing and executing mass data gathering on the web, recombined and represented in a process of _gestalt_, in which the whole is more than the sum of its parts. What can we express through collecting every single review on Yelp? Every picture on Tumblr? Every statement from the Minister of Finances? Every apartment listing on wg-gesucht.de? Every picture from leading curator's Instagram accounts? Every video posted by various telegram channels?
